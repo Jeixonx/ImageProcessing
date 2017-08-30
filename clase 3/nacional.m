@@ -1,0 +1,19 @@
+clear all; close all; clc
+a=imread('nal.jpg');
+b=imread('kratos.jpg');
+%a1=rgb2gray(a);
+%v1=rgb2gray(b);
+[x1, y1, z1]=size(a); %saca filas, columnas y capas de la imaben
+[x2,y2,z2]=size(b);
+b2=imresize(b,[x1,y1]);
+%c=(a/2)+(b/2); %sumar medios es diferente que la media total
+figure(1);
+imshow([a,b2,c]);
+impixelinfo;
+imwrite(c,'photoshopisdeadcolor.jpg');
+b3=imresize(b,[x,y]);
+for i = 0:01:1
+    c=a*i + b3(1-i);
+    figure(5); imshow(c);
+    pause(0.1)
+end
