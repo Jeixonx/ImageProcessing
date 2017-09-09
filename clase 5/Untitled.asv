@@ -1,4 +1,0 @@
-clear all; close all; clc
-a=imread('carro (1).jpg');
-[fil, col, cap]=size(a);
-b=reshape
